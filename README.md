@@ -5,7 +5,7 @@ Static site: plain HTML, one CSS file, one small JS file. No build step.
 ```
 index.html     landing page
 privacy.html   privacy policy (needed for the store listings)
-support.html   support page: email form + direct address (use as the App Store "Support URL")
+support.html   support page, served at /support: email form + direct address (use as the App Store "Support URL")
 app-ads.txt    AdMob authorized-sellers file — must be served at the domain root
 css/ js/ assets/
 ```
@@ -13,10 +13,20 @@ css/ js/ assets/
 ## Preview locally
 
 ```bash
-python3 -m http.server 8000 --directory landingpage
+python3 tools/serve_landingpage.py        # from the repo root; http://127.0.0.1:8000/
 ```
 
-Open <http://localhost:8000/>.
+Use this instead of `python3 -m http.server`: it serves the clean URLs (`/privacy`, `/support`)
+the same way GitHub Pages does.
+
+## Clean URLs
+
+Pages are linked without `.html`: `/privacy`, `/support`, `/`. GitHub Pages serves `privacy.html`
+at `/privacy` on its own, so the files keep their `.html` names. Old `.html` links still work —
+`js/main.js` rewrites the address bar to the clean URL — and each page declares the clean URL as
+`<link rel="canonical">`, so search engines index that one. GitHub Pages cannot send real
+301 redirects; if you ever move to a host that can (Cloudflare Pages, Netlify), add one from
+`/privacy.html` to `/privacy`. `/privacy/` (trailing slash) is not served by GitHub Pages.
 
 ## Fill in before publishing
 
@@ -39,7 +49,7 @@ Search for `class="placeholder"` to see every place a placeholder appears.
   only reads the site root of the developer website listed in the store listing. On
   GitHub Pages that means a user/org site (`<user>.github.io`) or a custom domain —
   a project site at `<user>.github.io/<repo>/` will not work for this file.
-- Use `https://<your-domain>/privacy.html` as the privacy policy URL in Google Play
+- Use `https://<your-domain>/privacy` as the privacy policy URL in Google Play
   Console and App Store Connect.
 - The page can be hosted as-is on Cloudflare Pages, Netlify, GitHub Pages, S3, etc.
   Publish the contents of `landingpage/` as the site root.

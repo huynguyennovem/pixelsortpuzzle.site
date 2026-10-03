@@ -10,6 +10,12 @@ const CONFIG = {
 (function () {
   "use strict";
 
+  // ---- clean URLs: show /privacy instead of /privacy.html (and / instead of /index.html) ----
+  if (/\.html$/.test(location.pathname) && window.history && history.replaceState) {
+    const clean = location.pathname.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
+    history.replaceState(null, "", clean + location.search + location.hash);
+  }
+
   // ---- fill config-driven text / links ----
   document.querySelectorAll("[data-cfg]").forEach((el) => {
     const value = CONFIG[el.dataset.cfg];
