@@ -1,4 +1,4 @@
-# Pixel Sort Puzzle — landing page
+# Pixel Dunes — landing page
 
 Static site: plain HTML, one CSS file, one small JS file. No build step.
 

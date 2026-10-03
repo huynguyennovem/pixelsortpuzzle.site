@@ -87,10 +87,10 @@ const CONFIG = {
       const f = new FormData(form);
       const name = (f.get("name") || "").toString().trim();
       const device = (f.get("device") || "").toString().trim();
-      const lines = [(f.get("message") || "").toString().trim(), "", "--", "Game: Pixel Sort Puzzle"];
+      const lines = [(f.get("message") || "").toString().trim(), "", "--", "Game: Pixel Dunes"];
       if (name) lines.push("Name: " + name);
       if (device) lines.push("Device: " + device);
-      return { subject: "[Pixel Sort Puzzle] " + f.get("topic"), body: lines.join("\n") };
+      return { subject: "[Pixel Dunes] " + f.get("topic"), body: lines.join("\n") };
     };
     const ready = () => {
       if (form.reportValidity()) return compose();
