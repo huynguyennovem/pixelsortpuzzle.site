@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Pixel Sort Puzzle</title>
+  <meta name="description" content="Need help with Pixel Sort Puzzle? Report a bug, send feedback or ask a question — it goes straight to our inbox.">
+  <meta name="theme-color" content="#121110">
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icon/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/PixeloidSans.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Pixel Sort Puzzle — home">
+        <img src="assets/icon/favicon.png" alt="" width="40" height="40">
+        <span>Pixel Sort<br>Puzzle</span>
+      </a>
+      <nav class="menu" aria-label="Main" style="display:flex">
+        <a class="btn btn-sm" href="index.html">&larr; Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="legal">
+    <div class="wrap">
+      <article class="doc frame">
+        <h1>Support</h1>
+        <p class="meta">Bug, idea or question? Tell us and we&rsquo;ll get back to you by email.</p>
+
+        <form class="form" id="support-form" novalidate>
+          <div class="field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="Bug report">Bug report</option>
+              <option value="Feedback / idea">Feedback / idea</option>
+              <option value="Question">Question</option>
+              <option value="Privacy / ads">Privacy / ads</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="name">Your name <small>optional</small></label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="80">
+          </div>
+          <div class="field">
+            <label for="device">Phone &amp; OS <small>optional, helps with bugs</small></label>
+            <input id="device" name="device" type="text" maxlength="120" placeholder="e.g. Pixel 8, Android 15  /  iPhone 15, iOS 18">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required maxlength="1500" placeholder="What happened, or what would you like to tell us? For bugs, mention the level number and what you tapped."></textarea>
+            <span class="count" id="count" aria-live="off">0 / 1500</span>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Open in my email app</button>
+            <button class="btn btn-alt" type="button" id="gmail">Open in Gmail</button>
+          </div>
+          <p class="form-status" id="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-direct">
+          <p>Prefer to write it yourself? Email us at</p>
+          <p class="addr"><a href="mailto:hugetree29@gmail.com">hugetree29@gmail.com</a></p>
+          <p style="margin-top:12px"><button class="btn btn-alt btn-sm" type="button" id="copy">Copy address</button></p>
+        </div>
+
+        <p class="meta" style="margin-top:28px">This form doesn&rsquo;t send anything by itself: it prepares an email in your own mail app (or Gmail), and nothing is sent until you press send there. We only receive what you write. See our <a href="privacy.html">Privacy Policy</a>.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/icon/favicon.png" alt="" width="40" height="40">
+          <span>Pixel Sort<br>Puzzle</span>
+        </a>
+        <p>&copy; <span data-year>2026</span> HugeTree. All rights reserved.</p>
+      </div>
+      <div>
+        <nav aria-label="Footer">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
