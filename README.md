@@ -69,7 +69,7 @@ privacy policy, since that service would then process the message.
 
 Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_SETUP.md`):
 
-- **50 levels** is `LevelManager.DefaultTotalLevels`. Update the hero chip and meta
+- **Endless levels**: the first 50 are designed (`LadderDefinition`), the rest are generated. Update the hero chip and meta
   description if that changes.
 - Ads: banner on gameplay/complete screens, interstitial between levels (after ≥ 5
   completed levels, then every 4 levels, ≥ 90 s apart), rewarded video on HINT — and a
