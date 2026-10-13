@@ -3,8 +3,7 @@
 const CONFIG = {
   studioName: "HugeTree",
   supportEmail: "hugetree29@gmail.com",
-  googlePlayUrl: "",  // e.g. "https://play.google.com/store/apps/details?id=com.game.pixelsortpuzzle"
-  appStoreUrl: "",    // e.g. "https://apps.apple.com/app/id0000000000"
+  googlePlayUrl: "https://play.google.com/store/apps/details?id=com.game.pixelsortpuzzle",
 };
 
 (function () {
@@ -29,15 +28,14 @@ const CONFIG = {
     else a.removeAttribute("href");
   });
 
-  const storeUrls = { google: CONFIG.googlePlayUrl, apple: CONFIG.appStoreUrl };
-  document.querySelectorAll("[data-store]").forEach((a) => {
-    const url = storeUrls[a.dataset.store];
-    if (!url) return;
-    a.href = url;
-    a.rel = "noopener";
-    a.removeAttribute("aria-disabled");
-    a.querySelector("small").textContent = a.dataset.store === "google" ? "Get it on" : "Download on the";
-  });
+  if (CONFIG.googlePlayUrl) {
+    document.querySelectorAll("[data-store]").forEach((a) => {
+      a.href = CONFIG.googlePlayUrl;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.removeAttribute("aria-disabled");
+    });
+  }
 
   document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 

@@ -5,7 +5,7 @@ Static site: plain HTML, one CSS file, one small JS file. No build step.
 ```
 index.html     landing page
 privacy.html   privacy policy (needed for the store listings)
-support.html   support page, served at /support: email form + direct address (use as the App Store "Support URL")
+support.html   support page, served at /support: email form + direct address
 app-ads.txt    AdMob authorized-sellers file — must be served at the domain root
 css/ js/ assets/
 ```
@@ -31,15 +31,14 @@ at `/privacy` on its own, so the files keep their `.html` names. Old `.html` lin
 ## Fill in before publishing
 
 These values do not exist anywhere in the Unity project, so the page shows highlighted
-placeholders (yellow, dashed underline) and disabled "Coming soon" store badges until
+placeholders (yellow, dashed underline) and a dimmed, unlinked Google Play badge until
 you set them. Edit the `CONFIG` block at the top of [`js/main.js`](js/main.js):
 
 | Key | What | Where it shows |
 |---|---|---|
 | `studioName` | Developer / company name — set to **HugeTree** (also written directly in `index.html`, `privacy.html` and `support.html`; change all four places if it changes) | footer, privacy policy |
 | `supportEmail` | Contact address — set to **hugetree29@gmail.com** (also written directly in `index.html`, `privacy.html` and `support.html`; change all four places if it changes) | footer, privacy policy |
-| `googlePlayUrl` | Play Store listing URL | both store badges sections |
-| `appStoreUrl` | App Store listing URL | both store badges sections |
+| `googlePlayUrl` | Play Store listing URL (opens in a new tab) | both Google Play badges (hero + download) |
 
 Search for `class="placeholder"` to see every place a placeholder appears.
 
@@ -50,7 +49,7 @@ Search for `class="placeholder"` to see every place a placeholder appears.
   GitHub Pages that means a user/org site (`<user>.github.io`) or a custom domain —
   a project site at `<user>.github.io/<repo>/` will not work for this file.
 - Use `https://<your-domain>/privacy` as the privacy policy URL in Google Play
-  Console and App Store Connect.
+  Console.
 - The page can be hosted as-is on Cloudflare Pages, Netlify, GitHub Pages, S3, etc.
   Publish the contents of `landingpage/` as the site root.
 - Add absolute `og:image` / canonical URLs in `index.html` once the final domain is known
@@ -75,7 +74,7 @@ Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_
   completed levels, then every 4 levels, ≥ 90 s apart), rewarded video on HINT — and a
   hint is always granted even if the ad fails or is closed. If `MonetizationConfig`
   changes, update `privacy.html`.
-- The privacy policy matches the current integration (AdMob + UMP consent + iOS ATT, no
+- The privacy policy matches the current integration (AdMob + UMP consent, Android only, no
   IAP, no other SDKs). Re-check it whenever an SDK is added, and have it reviewed
   before release; it is not legal advice.
 
@@ -85,12 +84,12 @@ Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_
   (current build, with the M16 tube cracks), captured in a scratch copy of the Unity project
   with a PlayMode harness — not mocked up in CSS. Re-capture them when the board art changes.
 - `level-select.png` and `level-complete.png` come from the earlier `ss/` captures.
+- `assets/GooglePlay_Badge.png` is the official "Get it on Google Play" badge. The game is
+  Android-only; there is no App Store badge.
 - The jar icon on the first feature card is `art_export/app_icon/app_icon_64_master.png`.
 
 ## Known gaps
 
-- Store badges are plain styled buttons, not the official Google/Apple badge artwork.
-  Swap in the official badges (per their brand guidelines) when the listings go live.
 - `level-select.png` / `level-complete.png` predate the latest build; refresh them if their UI changed.
 
 ## Credits

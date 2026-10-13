@@ -117,16 +117,14 @@ h3 { font-size: 18px; }
 
 .stores { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
 .store {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
-  min-width: 190px; padding: 10px 20px 11px;
-  text-decoration: none; color: var(--cream);
-  background: var(--panel-2); border: 3px solid var(--gold);
-  box-shadow: 0 4px 0 #000;
+  display: block; line-height: 0; background: #000;
+  border: 2px solid var(--gold); box-shadow: 0 0 0 2px #000, 0 4px 0 2px var(--bronze);
+  margin: 2px 2px 6px; transition: transform .08s, box-shadow .08s;
 }
-.store small { font: 600 12px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.store strong { font: 400 20px/1.2 var(--pixel); text-transform: uppercase; }
-a.store:hover { background: #33281d; color: #fff; }
-.store[aria-disabled="true"] { cursor: default; opacity: .78; border-color: var(--bronze); }
+.store img { width: auto; height: 18px; image-rendering: auto; }
+a.store[href]:hover { border-color: var(--amber); }
+a.store[href]:active { transform: translateY(3px); box-shadow: 0 0 0 2px #000, 0 1px 0 2px var(--bronze); }
+.store[aria-disabled="true"] { cursor: default; opacity: .6; }
 
 /* ---------- nav ---------- */
 .nav {

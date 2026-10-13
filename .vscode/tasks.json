@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve landing page",
+      "type": "shell",
+      "command": "python3",
+      "args": ["-u", "${workspaceFolder}/../tools/serve_landingpage.py", "8000"],
+      "isBackground": true,
+      "presentation": { "reveal": "silent", "panel": "dedicated" },
+      "problemMatcher": {
+        "owner": "serve-landingpage",
+        "pattern": { "regexp": "^__never_matches__$" },
+        "background": {
+          "beginsPattern": "^Serving landingpage",
+          "endsPattern": "^Serving landingpage"
+        }
+      }
+    },
+    {
+      "label": "Stop landing page server",
+      "type": "shell",
+      "command": "echo ${input:terminateServer}",
+      "presentation": { "reveal": "never" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "terminateServer",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "Serve landing page"
+    }
+  ]
+}
