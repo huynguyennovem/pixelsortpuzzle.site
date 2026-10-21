@@ -84,7 +84,8 @@ Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_
   (current build, with the M16 tube cracks), captured in a scratch copy of the Unity project
   with a PlayMode harness — not mocked up in CSS. Re-capture them when the board art changes.
 - `level-select.png` and `level-complete.png` come from the earlier `ss/` captures.
-- `assets/GooglePlay_Badge.png` is the official "Get it on Google Play" badge. The game is
+- `assets/GooglePlay_Badge.svg` is the official "Get it on Google Play" badge (Partner Marketing Hub,
+  Digital/svg, `GetItOnGooglePlay_Badge_Web_color_English.svg`). The game is
   Android-only; there is no App Store badge.
 - The jar icon on the first feature card is `art_export/app_icon/app_icon_64_master.png`.
 

@@ -121,7 +121,7 @@ h3 { font-size: 18px; }
   border: 2px solid var(--gold); box-shadow: 0 0 0 2px #000, 0 4px 0 2px var(--bronze);
   margin: 2px 2px 6px; transition: transform .08s, box-shadow .08s;
 }
-.store img { width: auto; height: 18px; image-rendering: auto; }
+.store img { width: auto; height: 56px; image-rendering: auto; }
 a.store[href]:hover { border-color: var(--amber); }
 a.store[href]:active { transform: translateY(3px); box-shadow: 0 0 0 2px #000, 0 1px 0 2px var(--bronze); }
 .store[aria-disabled="true"] { cursor: default; opacity: .6; }
@@ -290,6 +290,7 @@ a.store[href]:active { transform: translateY(3px); box-shadow: 0 0 0 2px #000, 0
   .burger { display: none; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(3, 1fr); }
+  .store img { height: 64px; }
   .footer .wrap { grid-template-columns: 1.2fr 1fr; align-items: start; }
   .legal .doc { padding: 48px 56px 56px; }
 }
