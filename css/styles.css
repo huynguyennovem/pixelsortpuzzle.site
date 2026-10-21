@@ -116,14 +116,9 @@ h3 { font-size: 18px; }
 .btn-sm { min-height: 42px; padding: 8px 16px; font-size: 14px; }
 
 .stores { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-.store {
-  display: block; line-height: 0; background: #000;
-  border: 2px solid var(--gold); box-shadow: 0 0 0 2px #000, 0 4px 0 2px var(--bronze);
-  margin: 2px 2px 6px; transition: transform .08s, box-shadow .08s;
-}
+.store { display: block; line-height: 0; transition: transform .08s; }
 .store img { width: auto; height: 56px; image-rendering: auto; }
-a.store[href]:hover { border-color: var(--amber); }
-a.store[href]:active { transform: translateY(3px); box-shadow: 0 0 0 2px #000, 0 1px 0 2px var(--bronze); }
+a.store[href]:active { transform: translateY(2px); }
 .store[aria-disabled="true"] { cursor: default; opacity: .6; }
 
 /* ---------- nav ---------- */
