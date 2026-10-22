@@ -31,9 +31,9 @@
     <div class="wrap">
       <article class="doc frame">
         <h1>Privacy Policy</h1>
-        <p class="meta">Effective date: October 16, 2026</p>
+        <p class="meta">Effective date: October 22, 2026</p>
 
-        <p>This policy explains what happens to your information when you play <strong>Pixel Dunes</strong> (the &ldquo;game&rdquo;), published by HugeTree (&ldquo;we&rdquo;, &ldquo;us&rdquo;). The short version: the game has no accounts, it stores your progress only on your device, and it uses two Google services that collect data from your device: Google AdMob to show ads, and Google Analytics for Firebase to measure installs, sessions and ad revenue. Both may use your device&rsquo;s advertising ID and other device identifiers.</p>
+        <p>This policy explains what happens to your information when you play <strong>Pixel Dunes</strong> (the &ldquo;game&rdquo;), published by HugeTree (&ldquo;we&rdquo;, &ldquo;us&rdquo;). The short version: the game has no accounts, it stores your progress only on your device, and it uses two Google services that collect data from your device: Google AdMob to show ads, and Google Analytics for Firebase to measure installs, sessions, level completions and ad revenue. Both may use your device&rsquo;s advertising ID and other device identifiers.</p>
 
         <h2>1. What we collect ourselves</h2>
         <p>We don&rsquo;t ask you to create an account, sign in, or give us your name, email address, location or contacts, and the game has no server of ours that receives your gameplay data. We do receive aggregated reports from Google Analytics for Firebase (section 4), which Google builds from the data it collects through the game.</p>
@@ -53,14 +53,15 @@
         <p>We do not sell your information or share it with advertisers ourselves, and the ad network does not send any personal data back to us.</p>
 
         <h2>4. Analytics (Google Analytics for Firebase)</h2>
-        <p>The game includes <strong>Google Analytics for Firebase</strong>, provided by Google. We use it to count installs and sessions, and to measure the ad revenue the game earns so we can evaluate and optimise our advertising campaigns on Google Ads. It collects automatically, without any action from you:</p>
+        <p>The game includes <strong>Google Analytics for Firebase</strong>, provided by Google. We use it to count installs and sessions, to see how far players get and how often ads appear, and to measure the ad revenue the game earns so we can evaluate and optimise our advertising campaigns on Google Ads. It collects automatically, without any action from you:</p>
         <ul>
           <li>an <strong>app instance ID</strong> and your device&rsquo;s <strong>advertising identifier</strong> (Android Advertising ID);</li>
           <li>your IP address and the approximate location derived from it;</li>
           <li>device and app information (device model, operating system version, language, app version);</li>
-          <li>usage events such as first open, session start, screen views, and ad events (ad format, ad impressions and the estimated revenue per impression).</li>
+          <li>usage events such as first open, session start, screen views, and ad events (ad format, ad impressions and the estimated revenue per impression);</li>
+          <li>events sent by the game itself: each completed level (level number, moves, hints and undos used, time taken) and each time the game requests, shows or fails to show an ad (with the level it happened on).</li>
         </ul>
-        <p>The game does not send your puzzle progress, levels played or any other gameplay events to Firebase. Google processes this data under its own terms; see <a href="https://firebase.google.com/support/privacy" rel="noopener">Privacy and Security in Firebase</a>. This data can be linked with Google Ads so we can see which campaigns brought in players. We don&rsquo;t sell it and it is not used to identify you by name.</p>
+        <p>Apart from these, the game does not send your puzzle progress or other gameplay events to Firebase. Google processes this data under its own terms; see <a href="https://firebase.google.com/support/privacy" rel="noopener">Privacy and Security in Firebase</a>. This data can be linked with Google Ads so we can see which campaigns brought in players. We don&rsquo;t sell it and it is not used to identify you by name.</p>
 
         <h2>5. Your choices</h2>
         <ul>
@@ -70,7 +71,7 @@
         </ul>
 
         <h2>6. Purchases and other SDKs</h2>
-        <p>The game has no in-app purchases, so no payment information is involved. Apart from Google&rsquo;s advertising SDK, Google Analytics for Firebase and the consent tools they use, we have not added any crash-reporting, attribution or social-media SDKs.</p>
+        <p>The game has no in-app purchases, so no payment information is involved. The game also uses <strong>Firebase Remote Config</strong> to adjust how often ads appear without an app update; it downloads these settings using a Firebase installation ID and sends no gameplay data. Apart from Google&rsquo;s advertising SDK, Google Analytics for Firebase, Firebase Remote Config and the consent tools they use, we have not added any crash-reporting, attribution or social-media SDKs.</p>
 
         <h2>7. Children</h2>
         <p>The game is intended for a general audience and is not directed at children under 13 (or the minimum age in your country). We don&rsquo;t knowingly collect personal information from children. If you believe a child has provided information through the game, contact us and we will help.</p>

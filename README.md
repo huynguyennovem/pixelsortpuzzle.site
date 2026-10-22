@@ -70,13 +70,17 @@ Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_
 
 - **Endless levels**: the first 50 are designed (`LadderDefinition`), the rest are generated. Update the hero chip and meta
   description if that changes.
-- Ads: banner on gameplay/complete screens, interstitial between levels (after ≥ 5
-  completed levels, then every 4 levels, ≥ 90 s apart), rewarded video on HINT — and a
-  hint is always granted even if the ad fails or is closed. If `MonetizationConfig`
-  changes, update `privacy.html`.
-- The privacy policy matches the current integration (AdMob + UMP consent, Android only, no
-  IAP, no other SDKs). Re-check it whenever an SDK is added, and have it reviewed
-  before release; it is not legal advice.
+- Ads: banner on gameplay/complete screens; interstitial between levels (after ≥ 3
+  completed levels, then every 2 levels, ≥ 45 s apart, never after a Hard/Boss level);
+  App Open ad on launch and on return to the game (after ≥ 3 completed levels; a return
+  counts only after ≥ 30 s away); rewarded
+  video on HINT once the level's free hints are used up (unlimited up to level 10, then 2
+  per level, 3 on Hard/Boss). If the ad fails or none is loaded the hint is still granted;
+  closing the ad early gives no hint. If `MonetizationConfig` changes, update `privacy.html`.
+- The privacy policy covers AdMob + UMP consent and Google Analytics for Firebase on
+  **Android** (no IAP, no other SDKs). It does not cover iOS yet (see Known gaps). Re-check
+  it whenever an SDK or platform is added, and have it reviewed before release; it is not
+  legal advice.
 
 ## Where the images come from
 
@@ -85,13 +89,21 @@ Copy was written from the code and docs (`GAME_DESIGN.md`, `Documentation/ADMOB_
   with a PlayMode harness — not mocked up in CSS. Re-capture them when the board art changes.
 - `level-select.png` and `level-complete.png` come from the earlier `ss/` captures.
 - `assets/GooglePlay_Badge.svg` is the official "Get it on Google Play" badge (Partner Marketing Hub,
-  Digital/svg, `GetItOnGooglePlay_Badge_Web_color_English.svg`). The game is
-  Android-only; there is no App Store badge.
+  Digital/svg, `GetItOnGooglePlay_Badge_Web_color_English.svg`). The game ships on Android
+  and iOS (same bundle ID `com.game.pixelsortpuzzle`; the iOS build was submitted to the
+  App Store), but the page only has the Google Play badge so far — see Known gaps.
 - The jar icon on the first feature card is `art_export/app_icon/app_icon_64_master.png`.
 
 ## Known gaps
 
 - `level-select.png` / `level-complete.png` predate the latest build; refresh them if their UI changed.
+- iOS is not on the page yet. Once the App Store listing is live: add an `appStoreUrl` key to
+  `CONFIG` in `js/main.js`, the official "Download on the App Store" badge (Apple Marketing
+  Resources) next to the Google Play badges, and an iOS example in the support form's device
+  field (it only shows "Pixel 8, Android 15").
+- `privacy.html` is Android-only: it names the Android Advertising ID and Android settings, and says
+  nothing about the iOS advertising identifier (IDFA), the App Tracking Transparency prompt or the
+  iOS settings for them. Add these before relying on it as the App Store privacy policy URL.
 
 ## Credits
 
